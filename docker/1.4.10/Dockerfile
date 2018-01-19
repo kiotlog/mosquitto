@@ -1,9 +1,9 @@
-FROM alpine:3.5
+FROM alpine
 MAINTAINER David Audet <david.audet@ca.com>
 
 LABEL Description="Eclipse Mosquitto MQTT Broker"
 
-RUN apk --no-cache add mosquitto=1.4.10-r2 && \
+RUN apk --no-cache add mosquitto && \
     mkdir -p /mosquitto/config /mosquitto/data /mosquitto/log && \
     cp /etc/mosquitto/mosquitto.conf /mosquitto/config && \
     chown -R mosquitto:mosquitto /mosquitto
